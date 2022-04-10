@@ -21,7 +21,7 @@ module.exports= function (app,myDataBase) {
   passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "https://advancedNodeExpress.cyucelyavuz.repl.co/auth/github/callback"
+    callbackURL: "https://advNodeExpress.cyucelyavuz.repl.co/auth/github/callback"
   },(accessToken,refreshToken,profile,cb)=>{
     console.log(profile);
     myDataBase.findAndModify(
