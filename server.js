@@ -40,6 +40,10 @@ myDB(async (client) => {
     ++currentUsers;
     io.emit('user count', currentUsers);
     console.log('A user has connected');
+
+    socket.on('disconnect', () => {
+     --currentUsers;
+    });
   });
 }).catch((e) => {
   app.route('/').get((req, res) => {
